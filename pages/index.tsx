@@ -19,7 +19,7 @@ export default function Home() {
   }>({
     messages: [
       {
-        message: 'Halo! Saya telah disuplai dengan sumber data eksternal mengenai UU 13/2003 tentang Ketenagakerjaan dan perubahannya pada UU 11/2020 tentang Cipta Kerja. Apakah Anda memiliki pertanyaan yang bisa saya bantu?',
+        message: 'Halo! Saya telah disuplai oleh sumber data eksternal berisi Peraturan Perundang-undangan Republik Indonesia pada klaster Ketenagakerjaan. Apakah Anda memiliki pertanyaan yang bisa saya bantu?',
         type: 'apiMessage',
       },
     ],
@@ -35,14 +35,14 @@ export default function Home() {
     textAreaRef.current?.focus();
   }, []);
 
-  //handle form submission
+  // form submission
   async function handleSubmit(e: any) {
     e.preventDefault();
 
     setError(null);
 
     if (!query) {
-      alert('Please input a question');
+      alert('Tolong masukkan suatu prompt');
       return;
     }
 
@@ -82,7 +82,7 @@ export default function Home() {
         setMessageState((state) => (
           {
             ...state,
-            history: [],
+            history: [], // mengosongkan riwayat percakapan
           }));
 
         setMessageState((state) => ({
@@ -102,12 +102,12 @@ export default function Home() {
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      setError('An error occurred while fetching the data. Please try again.');
+      setError('Terjadi error saat sedang mengirim/mengambil data dari API');
       console.log('error', error);
     }
   }
 
-  //prevent empty submissions
+  // mencegah empty form submission
   const handleEnter = (e: any) => {
     if (e.key === 'Enter' && query) {
       handleSubmit(e);
@@ -121,7 +121,7 @@ export default function Home() {
       <Layout>
         <div className="mx-auto flex flex-col gap-4">
           <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-center">
-            Perpy: An Indonesian Legal VA (beta)
+            Legalang: An Indonesian Legal QA System (beta)
           </h1>
           <main className={styles.main}>
             <div className={styles.cloud}>
@@ -146,7 +146,7 @@ export default function Home() {
                     icon = (
                       <Image
                         key={index}
-                        src="/user-128.png"
+                        src="/user_illustration.png"
                         alt="User icon"
                         width="30"
                         height="30"
@@ -188,8 +188,8 @@ export default function Home() {
                     name="userInput"
                     placeholder={
                       loading
-                        ? 'Harap menunggu...'
-                        : 'Sampaikan pertanyaan Anda di sini'
+                      ? 'harap menunggu, saya sedang mencoba membuat jawaban untuk Anda...'
+                      : 'Apa yang dimaksud dengan RPTKA?'
                     }
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
@@ -205,7 +205,7 @@ export default function Home() {
                         <LoadingDots color="#000" />
                       </div>
                     ) : (
-                      // Send icon SVG in input field
+                      // icon
                       <svg
                         viewBox="0 0 20 20"
                         className={styles.svgicon}

@@ -69,8 +69,8 @@ export const makeChain = (
   vectorstore: PineconeStore
   ) => {
     const model = new OpenAI({
-      temperature: 0.1, // increase temepreature to get more creative answers
-      modelName: 'gpt-3.5-turbo', //change this to gpt-4 if you have access
+      temperature: 0.1,
+      modelName: 'gpt-3.5-turbo',
       callbacks: [
         {
           handleLLMEnd: async (output: LLMResult) => {
@@ -82,7 +82,7 @@ export const makeChain = (
     
     const chain = ConversationalRetrievalQAChain.fromLLM(
       model,
-      vectorstore.asRetriever(5), //you can set the N here, the default is 4
+      vectorstore.asRetriever(5), //by default is 4
       {
         questionGeneratorTemplate: CONDENSE_PROMPT_TEMPLATE,
         qaTemplate: RESPONSE_TEMPLATE,
