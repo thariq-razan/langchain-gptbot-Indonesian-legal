@@ -15,9 +15,9 @@ Perhatikan contoh riwayat percakapan di bawah ini.
   "Ya, pengusaha wajib memberikan kesempatan yang secukupnya kepada pekerja/buruh untuk melaksanakan ibadah yang diwajibkan oleh agamanya sesuai dengan Pasal 80 Undang-Undang Nomor 13 Tahun 2003 tentang Ketenagakerjaan."
 Perhatikan contoh prompt lanjutan di bawah ini.
   "Kalau begitu, apakah hukuman bagi pengusaha yang melanggar ketentuan tersebut?"
-Dari contoh di atas, prompt lanjutan tidak memiliki objek yang jelas karena mengandung kata rujukan 'tersebut' yang mengacu pada 'Pasal 80 Undang-Undang Nomor 13 Tahun 2003 tentang Ketenagakerjaan'.
+Dari contoh di atas, prompt lanjutan dianggap tidak jelas karena mengandung kata rujukan 'tersebut' yang mengacu pada 'pengusaha wajib memberikan kesempatan kepada pekerja untuk melaksanakan ibadah yang diwajibkan oleh agamanya'.
 Kamu bisa menyatakan ulang contoh ke dalam prompt baru seperti di bawah ini.
-  Apakah hukuman bagi pengusaha yang melanggar ketentuan pada Pasal 80 Undang-Undang Nomor 13 Tahun 2003 tentang Ketenagakerjaan?
+  Apakah hukuman bagi pengusaha yang melanggar ketentuan untuk memberikan kesempatan kepada pekerja untuk melaksanakan ibadah yang diwajibkan oleh agamanya?
 ---
 Prompt lanjutan: {question}
 ---
